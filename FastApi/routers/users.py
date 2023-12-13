@@ -80,3 +80,10 @@ async def user(id:int):
     if not found:
        return{"Error":"no se ah eliminado el usuario"}   
 
+
+def search_user(id: int):
+    users = filter(lambda user: user.id == id, users_list)
+    try:
+        return list(users)[0]
+    except:
+        return {"error": "No se ha encontrado el usuario"}
